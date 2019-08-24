@@ -23,3 +23,11 @@ eureka:
 
 gateway:
   ip: 172.20.86.49
+
+token:
+  expiration-time: 48
+  secret: my-secret
+
+login:
+  url:
+    path: /users/login
