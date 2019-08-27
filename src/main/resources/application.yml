@@ -11,6 +11,11 @@ spring:
       enabled: true
       settings:
         web-allow-others: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 #  datasource:
 #    url:  jdbc:h2:mem:test_db
 #    username: sa
