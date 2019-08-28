@@ -36,3 +36,9 @@ token:
 login:
   url:
     path: /users/login
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: mappings
