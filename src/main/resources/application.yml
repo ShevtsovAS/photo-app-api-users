@@ -16,9 +16,20 @@ spring:
     port: 5672
     username: guest
     password: guest
-#  datasource:
-#    url:  jdbc:h2:mem:test_db
-#    username: sa
+  datasource:
+    url:  jdbc:postgresql://localhost:5432/photo_app
+    username: photo_app_user
+    password: photo_app_user
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+    show-sql: true
+
 eureka:
   client:
     service-url:
