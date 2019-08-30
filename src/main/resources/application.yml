@@ -53,3 +53,7 @@ management:
     web:
       exposure:
         include: mappings
+
+logging:
+  level:
+    com.example.photoapp.api.users.data.AlbumsServiceClient: debug

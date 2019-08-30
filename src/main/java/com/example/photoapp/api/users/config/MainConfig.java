@@ -1,6 +1,7 @@
 package com.example.photoapp.api.users.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import feign.Logger;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -39,6 +40,11 @@ public class MainConfig {
     @LoadBalanced
     public RestTemplate restTemplate() {
         return new RestTemplate();
+    }
+
+    @Bean
+    public Logger.Level feignLoggerLevel() {
+        return Logger.Level.FULL;
     }
 
 }
