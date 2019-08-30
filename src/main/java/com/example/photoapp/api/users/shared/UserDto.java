@@ -1,11 +1,13 @@
 package com.example.photoapp.api.users.shared;
 
+import com.example.photoapp.api.users.ui.model.AlbumResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @Builder
@@ -21,5 +23,5 @@ public class UserDto implements Serializable {
     private String password;
     private String encryptedPassword;
     private String email;
-
+    private List<AlbumResponse> albums;
 }

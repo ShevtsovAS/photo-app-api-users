@@ -4,6 +4,7 @@ import com.example.photoapp.api.users.service.UserService;
 import com.example.photoapp.api.users.shared.UserDto;
 import com.example.photoapp.api.users.ui.model.CreateUserRequest;
 import com.example.photoapp.api.users.ui.model.CreateUserResponse;
+import com.example.photoapp.api.users.ui.model.UserResponse;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.core.env.Environment;
@@ -32,5 +33,12 @@ public class UsersController {
         UserDto userDto = modelMapper.map(userDetails, UserDto.class);
         CreateUserResponse createdUser = modelMapper.map(userService.createUser(userDto), CreateUserResponse.class);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdUser);
+    }
+
+    @GetMapping("/{userId}")
+    public ResponseEntity<UserResponse> getUser(@PathVariable String userId) {
+        UserDto userDto = userService.getUserByUserId(userId);
+        UserResponse user = modelMapper.map(userDto, UserResponse.class);
+        return ResponseEntity.ok(user);
     }
 }
