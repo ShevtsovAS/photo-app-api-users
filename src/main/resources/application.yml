@@ -57,3 +57,7 @@ management:
 logging:
   level:
     com.example.photoapp.api.users.data.AlbumsServiceClient: debug
+
+feign:
+  hystrix:
+    enabled: true
